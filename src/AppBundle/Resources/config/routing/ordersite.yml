@@ -1,0 +1,24 @@
+ordersite_index:
+    path:     /
+    defaults: { _controller: "AppBundle:OrderSite:index" }
+    methods:  GET
+
+ordersite_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:OrderSite:show" }
+    methods:  GET
+
+ordersite_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:OrderSite:new" }
+    methods:  [GET, POST]
+
+ordersite_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:OrderSite:edit" }
+    methods:  [GET, POST]
+
+ordersite_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:OrderSite:delete" }
+    methods:  DELETE

@@ -1,0 +1,39 @@
+{% extends 'blogbase.html.twig' %}
+{% block title %} Blog{% endblock %}
+{% block body %}
+
+    <div class="row blogback">
+        <div class="container">
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <h1>{{ cat }}</h1>
+            <br/>
+            <br/>
+            {% if news|length == 0 %}
+                <p style="color: #fff; font-size: 16px;">Trenutno nema tekstova iz ove oblasti.</p>
+            {% else %}
+            {% for n in news %}
+                <a href="/blog/{{ n.category }}/{{ n.id }}">
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pull-left blog-small">
+                        <div class="blog-img">
+                            <img src="{{ asset('bundles/app/upload/blog/') }}{{ n.blogImg }}" alt="{{ n.name }}" />
+                        </div>
+                        <div class="blog-footer">
+                            <h3>{{ n.name }}</h3>
+                            <p>{{ n.blogTxt|slice(0,100) }}...</p>
+                            <span><i class="icon-time"></i> {% if n.createdAt %}{{ n.createdAt|date('d-m H:i') }}{% endif %} | <i class="icon-eye-open"></i> {{ n.views }}</span>
+                        </div>
+                    </div>
+                </a>
+            {% endfor %}
+            {% endif %}
+            <div class="clearfix"></div>
+            <br/>
+            <br/>
+            <br/>
+        </div>
+    </div>
+
+{% endblock %}

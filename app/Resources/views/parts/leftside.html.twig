@@ -1,0 +1,91 @@
+<div id="left" class="leftside">
+    <div class="media user-media well-small" style="background: #faebcc">
+        <br />
+        <div class="media-body">
+            <h5 class="media-heading"> milosSWT</h5>
+            <ul class="list-unstyled user-info">
+                <li>
+                    <a class="btn btn-success btn-xs btn-circle" style="width: 10px;height: 12px;"></a> <span style="color: orange;">Online</span>
+                </li>
+
+            </ul>
+        </div>
+        <br />
+    </div>
+    <ul id="menu" class="collapse">
+        <li class="panel">
+            <a href="{{ path('admin') }}" >
+                <i class="icon-home"></i> Početna
+                <span class="pull-right">
+                          <i class="icon-angle-right"></i>
+                    </span>
+            </a>
+        </li>
+        <li class="panel">
+            <a href="#" data-parent="#menu" data-toggle="collapse" class="accordion-toggle" data-target="#component-nav">
+                <i class="icon-tasks"> </i> Teme
+                <span class="pull-right">
+                          <i class="icon-angle-down"></i>
+                        </span>
+                &nbsp; <span class="label label-default">{{ theme }}</span>&nbsp;
+            </a>
+            <ul class="collapse" id="component-nav">
+
+                <li class=""><a href="{{ path('admin_teme_index') }}"><i class="icon-angle-right"></i> Pregled </a></li>
+                <li class=""><a href="{{ path('admin_teme_new') }}"><i class="icon-angle-right"></i> Nova tema </a></li>
+            </ul>
+        </li>
+        <li class="panel">
+            <a href="{{ path('admin_contact_index') }}" >
+                <i class="icon-envelope"></i> Inbox
+                <span class="pull-right">
+                          <i class="icon-angle-down"></i>
+                    </span>
+                &nbsp; <span class="label label-warning">{{ msgs }}</span>&nbsp;
+            </a>
+        </li>
+        <li class="panel ">
+            <a href="#" data-parent="#menu" data-toggle="collapse" class="accordion-toggle" data-target="#component-nav1">
+                <i class="icon-user"> </i> Korisnici
+                <span class="pull-right">
+                          <i class="icon-angle-down"></i>
+                        </span>
+                &nbsp; <span class="label label-default">{{ client }}</span>&nbsp;
+            </a>
+            <ul class="collapse" id="component-nav1">
+                <li class=""><a href="{{ path('admin_klijenti_index') }}"><i class="icon-angle-right"></i> Pregled </a></li>
+                <li class=""><a href="{{ path('admin_klijenti_new') }}"><i class="icon-angle-right"></i> Novi korisnik </a></li>
+            </ul>
+        </li>
+        <li class="panel">
+            <a href="{{ path('finance') }}" >
+                <i class="icon-money"></i> Finansije
+                <span class="pull-right">
+                          <i class="icon-angle-right"></i>
+                    </span>
+            </a>
+        </li>
+        <li class="panel ">
+            <a href="#" data-parent="#menu" data-toggle="collapse" class="accordion-toggle" data-target="#component-nav2">
+                <i class="icon-edit"> </i> Blog
+                    <span class="pull-right">
+                          <i class="icon-angle-down"></i>
+                    </span>
+                &nbsp; <span class="label label-default">{{ blog }}</span>&nbsp;
+            </a>
+            <ul class="collapse" id="component-nav2">
+                <li class=""><a href="{{ path('admin_blog_index') }}"><i class="icon-angle-right"></i> Pregled </a></li>
+                <li class=""><a href="{{ path('admin_blog_new') }}"><i class="icon-angle-right"></i> Novi tekst </a></li>
+            </ul>
+        </li>
+        <li class="panel">
+            <a href="{{ path('admin_adresar_index') }}">
+                <i class="icon-archive"></i> ADRESAR
+                <span class="pull-right">
+                          <i class="icon-angle-right"></i>
+                    </span>
+            </a>
+        </li>
+    </ul>
+
+</div>

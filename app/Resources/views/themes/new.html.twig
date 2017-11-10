@@ -1,0 +1,15 @@
+{% extends 'adminbase.html.twig' %}
+
+{% block body %}
+    <h1>Dodaj novu temu</h1>
+    <hr/>
+    <div class="col-md-8 col-sm-8 col-lg-8 col-xs-12 col-md-offset-2 col-lg-offset-2 col-sm-offset-2">
+        {{ form_start(form) }}
+            {{ form_widget(form) }}
+        <br/>
+            <input class="btn btn-success pull-right" type="submit" value="+ Dodaj" />
+        {{ form_end(form) }}
+
+        <a class="btn btn-info pull-left" href="{{ path('admin_teme_index') }}">Povratak na listu</a>
+    </div>
+{% endblock %}

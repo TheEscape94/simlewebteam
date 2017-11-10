@@ -1,0 +1,73 @@
+{% extends 'adminbase.html.twig' %}
+
+{% block body %}
+    <h1>Prikaz korisnika: <span class="label label-info">{{ client.name }} {{ client.lastname }}</span></h1>
+    <br/>
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ client.id }}</td>
+            </tr>
+            <tr>
+                <th>Ime</th>
+                <td>{{ client.name }}</td>
+            </tr>
+            <tr>
+                <th>Prezime</th>
+                <td>{{ client.lastname }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ client.email }}</td>
+            </tr>
+            <tr>
+                <th>Telefon</th>
+                <td>{{ client.phone }}</td>
+            </tr>
+            <tr>
+                <th>Grad</th>
+                <td>{{ client.city }}</td>
+            </tr>
+            <tr>
+                <th>Paket</th>
+                <td>{{ client.packet }}</td>
+            </tr>
+            <tr>
+                <th>Cena ( RSD / m)</th>
+                <td>{{ client.price }}</td>
+            </tr>
+            <tr>
+                <th>Domen</th>
+                <td>{{ client.domen }}</td>
+            </tr>
+            <tr>
+                <th>Beleska</th>
+                <td>{{ client.note }}</td>
+            </tr>
+            <tr>
+                <th>Datum placanja</th>
+                <td>{% if client.payingDate %}{{ client.payingDate|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Aktivan</th>
+                <td>{% if client.enabled %}Da{% else %}Ne{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Kreiran</th>
+                <td>{% if client.createdAt %}{{ client.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <td>
+                    <a class="btn btn-info" href="{{ path('admin_klijenti_index') }}">Povratak na listu</a>
+                </td>
+                <td>
+                    {{ form_start(delete_form) }}
+                    <input class="btn btn-danger pull-left" style="margin-right: 10px;" type="submit" value="Obrisi">
+                    {{ form_end(delete_form) }}
+                    <a class="btn btn-warning pull-left" href="{{ path('admin_klijenti_edit', { 'id': client.id }) }}">Izmeni</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+{% endblock %}

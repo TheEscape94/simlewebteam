@@ -1,0 +1,24 @@
+admin_teme_index:
+    path:     /
+    defaults: { _controller: "AppBundle:Themes:index" }
+    methods:  GET
+
+admin_teme_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:Themes:show" }
+    methods:  GET
+
+admin_teme_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:Themes:new" }
+    methods:  [GET, POST]
+
+admin_teme_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:Themes:edit" }
+    methods:  [GET, POST]
+
+admin_teme_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:Themes:delete" }
+    methods:  DELETE

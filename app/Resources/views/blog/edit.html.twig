@@ -1,0 +1,19 @@
+{% extends 'adminbase.html.twig' %}
+
+{% block body %}
+<h1>Izmena bloga</h1>
+<hr/>
+<div class="col-md-8 col-sm-8 col-lg-8 col-xs-12 col-md-offset-2 col-lg-offset-2 col-sm-offset-2">
+    {{ form_start(edit_form) }}
+    {{ form_widget(edit_form) }}
+    <br/>
+    <input class="btn btn-success pull-right" type="submit" value="Izmeni" />
+    {{ form_end(edit_form) }}
+
+    {{ form_start(delete_form) }}
+    <input class="btn btn-danger pull-right" style="margin-right: 10px;" type="submit" value="Obrisi">
+    {{ form_end(delete_form) }}
+
+    <a class="btn btn-info" href="{{ path('admin_blog_index') }}">Povratak na listu</a>
+</div>
+{% endblock %}

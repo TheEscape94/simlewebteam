@@ -1,0 +1,49 @@
+{% extends 'adminbase.html.twig' %}
+
+{% block body %}
+    <h1>Adresar : <span class="label label-info">{{ address.name }}</span></h1>
+    <br/>
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Dodao</th>
+                <td>{{ address.addedBy }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ address.name }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ address.email }}</td>
+            </tr>
+            <tr>
+                <th>Phone</th>
+                <td>{{ address.phone }}</td>
+            </tr>
+            <tr>
+                <th>City</th>
+                <td>{{ address.city }}</td>
+            </tr>
+            <tr>
+                <th>Note</th>
+                <td>{{ address.note }}</td>
+            </tr>
+            <tr>
+                <th>Createdat</th>
+                <td>{% if address.createdAt %}{{ address.createdAt|date('d-m-Y H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <td>
+                    <a class="btn btn-info" href="{{ path('admin_adresar_index') }}">Povratak na listu</a>
+                </td>
+                <td>
+                    {{ form_start(delete_form) }}
+                    <input class="btn btn-danger pull-left" style="margin-right: 10px;" type="submit" value="Obrisi">
+                    {{ form_end(delete_form) }}
+                    <a class="btn btn-warning pull-left" href="{{ path('admin_adresar_edit', { 'id': address.id }) }}">Izmeni</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+{% endblock %}

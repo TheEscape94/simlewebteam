@@ -1,0 +1,67 @@
+{% extends 'adminbase.html.twig' %}
+
+{% block body %}
+    <h1>Blog : <span class="label label-info">{{ blog.name }}</span></h1>
+    <br/>
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ blog.id }}</td>
+            </tr>
+            <tr>
+                <th>Naslov</th>
+                <td>{{ blog.name }}</td>
+            </tr>
+            <tr>
+                <th>Kategorija</th>
+                <td>
+                    {% if blog.category == 0 %}
+                        Programiranje
+                    {% elseif blog.category == 1 %}
+                        Dizajn
+                    {% else %}
+                        Seo & Social Network
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <th>Tekst</th>
+                <td>{{ blog.blogTxt }}</td>
+            </tr>
+            <tr>
+                <th>Slika</th>
+                <td>
+                    <img src="{{ asset('bundles/app/upload/blog/') }}{{ blog.blogImg }}" alt="" height="80" width="80" />
+                </td>
+            </tr>
+            <tr>
+                <th>YouTube link</th>
+                <td>{{ blog.ytLink }}</td>
+            </tr>
+            <tr>
+                <th>Link</th>
+                <td>{{ blog.link }}</td>
+            </tr>
+            <tr>
+                <th>Pregledi</th>
+                <td>{{ blog.views }}</td>
+            </tr>
+            <tr>
+                <th>Kreirano</th>
+                <td>{% if blog.createdAt %}{{ blog.createdAt|date('d-m-Y H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <td>
+                    <a class="btn btn-info" href="{{ path('admin_blog_index') }}">Povratak na listu</a>
+                </td>
+                <td>
+                    {{ form_start(delete_form) }}
+                    <input class="btn btn-danger pull-left" style="margin-right: 10px;" type="submit" value="Obrisi">
+                    {{ form_end(delete_form) }}
+                    <a class="btn btn-warning pull-left" href="{{ path('admin_blog_edit', { 'id': blog.id }) }}">Izmeni</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+{% endblock %}

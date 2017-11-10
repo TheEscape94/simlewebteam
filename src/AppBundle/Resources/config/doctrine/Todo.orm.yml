@@ -1,0 +1,21 @@
+AppBundle\Entity\Todo:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\TodoRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        user:
+            type: string
+            length: 65
+        createdAt:
+            type: datetime
+            column: created_at
+    lifecycleCallbacks: {  }

@@ -1,0 +1,32 @@
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+
+app_contact:
+    path:     /kontakt
+    defaults: { _controller: "AppBundle:Contact:new" }
+    methods:  [GET, POST]
+
+app_admin_teme:
+    resource: "@AppBundle/Resources/config/routing/themes.yml"
+    prefix:   /admin/teme
+
+app_ordersite:
+    resource: "@AppBundle/Resources/config/routing/ordersite.yml"
+    prefix:   /admin/ordersite
+
+app_admin_contact:
+    resource: "@AppBundle/Resources/config/routing/contact.yml"
+    prefix:   /admin/contact
+
+app_admin_blog:
+    resource: "@AppBundle/Resources/config/routing/blog.yml"
+    prefix:   /admin/blog
+
+app_admin_klijenti:
+    resource: "@AppBundle/Resources/config/routing/clients.yml"
+    prefix:   /admin/klijenti
+
+app_admin_adresar:
+    resource: "@AppBundle/Resources/config/routing/address.yml"
+    prefix:   /admin/adresar

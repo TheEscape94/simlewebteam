@@ -1,0 +1,48 @@
+{% extends 'adminbase.html.twig' %}
+
+{% block body %}
+    <h1>Poruka <span class="label label-warning">No. {{ contact.id }}</span></h1>
+    <br/>
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ contact.id }}</td>
+            </tr>
+            <tr>
+                <th>Poslao</th>
+                <td>{{ contact.name }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ contact.email }}</td>
+            </tr>
+            <tr>
+                <th>Telefon</th>
+                <td>{{ contact.phone }}</td>
+            </tr>
+            <tr>
+                <th>Poruka</th>
+                <td>{{ contact.massege }}</td>
+            </tr>
+            <tr>
+                <th>Procitano</th>
+                <td>{% if contact.isRead %}Da{% else %}Ne{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Stiglo</th>
+                <td>{% if contact.createdAt %}{{ contact.createdAt|date('d-m-Y H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <td>
+                    <a class="btn btn-info" href="{{ path('admin_contact_index') }}">Povratak na listu</a>
+                </td>
+                <td>
+                    {{ form_start(delete_form) }}
+                    <input class="btn btn-danger pull-left" style="margin-right: 10px;" type="submit" value="Obrisi">
+                    {{ form_end(delete_form) }}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+{% endblock %}

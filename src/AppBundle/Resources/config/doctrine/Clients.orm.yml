@@ -1,0 +1,44 @@
+AppBundle\Entity\Clients:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\ClientsRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: '65'
+        lastname:
+            type: string
+            length: '65'
+        email:
+            type: string
+            length: '95'
+        phone:
+            type: integer
+        city:
+            type: string
+            length: '65'
+        packet:
+            type: integer
+        price:
+            type: integer
+        domen:
+            type: string
+            length: '95'
+        note:
+            type: string
+            length: '1255'
+        payingDate:
+            type: datetime
+            column: paying_date
+        enabled:
+            type: boolean
+        createdAt:
+            type: datetime
+            column: created_at
+    lifecycleCallbacks: {  }

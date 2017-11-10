@@ -1,0 +1,30 @@
+AppBundle\Entity\Contact:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\ContactRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: '95'
+        email:
+            type: string
+            length: '65'
+        phone:
+            type: string
+            length: '20'
+        massege:
+            type: string
+            length: '855'
+        isRead:
+            type: boolean
+            column: is_read
+        createdAt:
+            type: datetime
+            column: created_at
+    lifecycleCallbacks: {  }

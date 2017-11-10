@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>SimpleWeb Team Dashboard</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ asset('bundles/app/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('bundles/app/font-awesome-4.7.0/css/font-awesome.min.css') }}" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Saira+Semi+Condensed" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('bundles/app/css/animate.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('bundles/app/css/style.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('bundles/app/css/preload.css') }}" type="text/css">
+
+    <script src="{{ asset('bundles/app/js/wow.min.js') }}"></script>
+</head>
+
+<body class="login">
+<div class="container">
+    <div class="login_wrapper col-lg-6 col-md-6 col-sm-6 col-xs-12 col-lg-offset-3 col-md-offset-3 col-sm-offset-3">
+        <div class="animate form login_form">
+            <br/>
+            {% if error %}
+                <div class="alert alert-danger col-sm-8 col-sm-offset-2 text-center">
+                    Pogrešno uneti podaci! Pokušajte ponovo.
+                </div>
+            {% endif %}
+            <br />
+            <br />
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                <div class="col-lg-6 col-sm-6 col-lg-offset-3 col-md-offset-3">
+                    <br/><br/><br/>
+                    <h3>Već ste ulogovani</h3>
+                    <br/>
+                    <div class="input-group animated bounceInLeft">
+                        <a href="{{ path('admin') }}" class="btn btn-success" style="margin-right: 10px">Idi na profil</a>
+                        <a href="{{ logout_path() }}" class="btn btn-danger">Odjavi se</a>
+                    </div>
+                </div>
+            {% else %}
+                <section class="login_content">
+                        <br/>
+                    <form action="{{ path('login') }}" method="post">
+                        <h1>Prijava na sistem</h1>
+                        <br/>
+                        <br/>
+                        <div>
+                            <input type="text" class="form-control" placeholder="Email" name="_username" required="" value="{{ last_username }}" />
+                        </div>
+                        <br/>
+                        <div>
+                            <input type="password" class="form-control" name="_password" placeholder="Lozinka" required="" />
+                        </div>
+                        <br/>
+                        <div>
+                            <input type="hidden" name="go_to" value="{{ path('admin') }}" />
+                            <input type="hidden" name="back_to" value="/login" />
+                            <button class="btn btn-default pull-right" type="submit">Prijavi se</button>
+                        </div>
+                        <div class="clearfix"></div>
+                        <br/>
+                        <center>
+                            <div class="separator">
+                                <div>
+                                    <h1><i class="fa fa-desktop"></i> SimpleWeb Team</h1>
+                                    <p>©2017 Sva prava zadrzana.</p>
+                                </div>
+                            </div>
+                            <div>
+                                <a class="btn btn-default" href="/">Nazad na sajt</a>
+                            </div>
+                        </center>
+                    </form>
+                </section>
+            {% endif %}
+        </div>
+    </div>
+</div>
+<script src="{{ asset('bundles/app/js/vendor/jquery-1.11.2.min.js') }}"></script>
+<!-- fajl ucitati iz assets/js/vendor/jquery* -->
+<script src="{{ asset('bundles/app/js/vendor/bootstrap.js') }}"></script>
+<!-- fajl bootstrap.js ucitati iz assets/js/vendor/ -->
+<script src="{{ asset('bundles/app/js/script.js') }}"></script>
+<script src="{{ asset('bundles/app/js/style.js') }}"></script>
+</body>
+</html>

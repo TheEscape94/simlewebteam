@@ -1,0 +1,37 @@
+AppBundle\Entity\Blog:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\BlogRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        blogTxt:
+            type: string
+            length: '4255'
+            column: blog_txt
+        blogImg:
+            type: string
+            length: 255
+            column: blog_img
+        ytLink:
+            type: string
+            length: 255
+            column: yt_link
+        link:
+            type: string
+            length: 255
+        views:
+            type: integer
+        category:
+            type: integer
+        createdAt:
+            type: datetime
+            column: created_at
+    lifecycleCallbacks: {  }

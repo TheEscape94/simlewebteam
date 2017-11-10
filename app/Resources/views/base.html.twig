@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>SimpleWeb Team |{% block title %}{% endblock %}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ asset('bundles/app/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('bundles/app/font-awesome-4.7.0/css/font-awesome.min.css') }}" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Saira+Semi+Condensed" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('bundles/app/css/animate.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('bundles/app/css/style.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('bundles/app/css/preload.css') }}" type="text/css">
+
+    <script src="{{ asset('bundles/app/js/wow.min.js') }}"></script>
+    {#<link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />#}
+
+    <script>
+        new WOW().init()
+    </script>
+</head>
+
+<body data-spy="scroll" data-target="#main-navbar">
+<div class="preload">
+    <div class="track t-h1"></div>
+    <div class="track t-v1"></div>
+    <div class="track t-h2 hide"></div>
+    <div class="track t-v2 hide"></div>
+
+    <div class="main">
+        <div class="borderTop"></div>
+        <div class="content">
+            <center>
+                <h1 class="headTxt hide">Best <span>online</span> solutions!</h1>
+                <img class="img1 hide" src="{{ asset('bundles/app/images/preload-img.png') }}" />
+                <br/>
+                <h3 class="subheadTxt hide">Lets make Your buisness <span>the best</span> today!</h3>
+            </center>
+        </div>
+    </div>
+</div>
+<div class="whole">
+    <!-- Navigation -->
+
+    <div class="navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{{ path('homepage') }}"><img src="{{ asset('bundles/app/images/logo-s.png') }}"></a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a class="scrollTo" href="#home">Početna</a></li>
+                    <li><a class="scrollTo" href="#usluge">Usluge</a></li>
+                    <li><a class="scrollTo" href="#o-nama">O nama</a></li>
+                    <li><a class="scrollTo" href="#ponuda">Ponuda</a></li>
+                    <li><a class="scrollTo" href="#paketi">Paketi</a></li>
+                    <li><a class="scrollTo" href="#teme">Teme</a></li>
+                    <li><a class="scrollTo" href="#korisnicka-podrska">Korisnička podrška</a></li>
+                    <li><a class="scrollTo" href="#blog">Blog</a></li>
+                    <li><a class="scrollTo" href="#outsorcing">Outsorcing</a></li>
+                    <li><a class="scrollTo" href="#kontakt">Kontakt</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- End navigation -->
+    {% block body %}{% endblock %}
+    <!-- Scroll -->
+
+    <div class="scroll-top">
+        <div class="scrollup">
+            <a href="#steva"><i class="fa fa-angle-double-up" style="width: 30px;height: 30px;text-align: center;color: #fff;font-size: 30px;background: #ffc038;
+                position: fixed;bottom: 30px;right: 50px;font-weight: bold;border-radius: 100%;transition:all 500ms .2s;cursor:pointer;"></i></a>
+        </div>
+    </div>
+
+    <!-- End scroll -->
+    <!-- Footer -->
+    <div class="footer" id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="main-footer">
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="footer-item">
+                            <h2>Kontaktirajte nas</h2>
+                            <p><i class="fa fa-home" aria-hidden="true"></i> Zmaj Jovina, Novi Sad</p>
+                            <p><i class="fa fa-envelope" aria-hidden="true"></i> mychild@gmail.com</p>
+                            <p><i class="fa fa-phone" aria-hidden="true"></i> +381 65/570-15-65</p>
+                            <p><i class="fa fa-phone" aria-hidden="true"></i> +381 62/810-14-61</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="footer-item" id="">
+                            <h2>O nama</h2>
+                            <p><a href="#">Ponuda</a></p>
+                            <p><a href="#">Paketi</a></p>
+                            <p><a href="#">Korisnička podrška</a></p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="footer-item">
+                            <h2>Teme</h2>
+                            <p><a href="#">Sve teme</a></p>
+                            <p><a href="#">Preporuka</a></p>
+                            <p><a href="#">Top 10</a></p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="footer-item" id="">
+                            <h2>PORTFOLIO</h2>
+                            <p><a href="#">Web Design</a></p>
+                            <p><a href="#">Outsourcing</a></p>
+                            <p><a href="#">Naši korisnici</a></p>
+                        </div>
+                    </div>
+                    <br/>
+                    <br/>
+                    <div class="socio-copyright">
+                        <div class="social">
+                            <a target="_blank" href="#"><i class="fa fa-facebook"></i></a>
+                            <a target="_blank" href="#"><i class="fa fa-twitter"></i></a>
+                            <a target="_blank" href="#"><i class="fa fa-google-plus"></i></a>
+                            <a target="_blank" href="#"><i class="fa fa-linkedin"></i></a>
+                        </div>
+                        <p><a target="_blank" href="/"> Web Connection Team </a>2017. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End footer -->
+</div>
+<script src="{{ asset('bundles/app/js/vendor/jquery-1.11.2.min.js') }}"></script>
+<!-- fajl ucitati iz assets/js/vendor/jquery* -->
+<script src="{{ asset('bundles/app/js/vendor/bootstrap.js') }}"></script>
+<!-- fajl bootstrap.js ucitati iz assets/js/vendor/ -->
+<script src="{{ asset('bundles/app/js/script.js') }}"></script>
+<script src="{{ asset('bundles/app/js/style.js') }}"></script>
+</body>
+
+</html>

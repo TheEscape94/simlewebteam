@@ -1,0 +1,24 @@
+admin_adresar_index:
+    path:     /
+    defaults: { _controller: "AppBundle:Address:index" }
+    methods:  GET
+
+admin_adresar_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:Address:show" }
+    methods:  GET
+
+admin_adresar_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:Address:new" }
+    methods:  [GET, POST]
+
+admin_adresar_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:Address:edit" }
+    methods:  [GET, POST]
+
+admin_adresar_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:Address:delete" }
+    methods:  DELETE

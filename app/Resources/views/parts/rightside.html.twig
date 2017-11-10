@@ -1,0 +1,30 @@
+<div id="right">
+    <br/>
+    <div class="well well-small" style="padding-top: 10px;">
+        <p style="text-align: center;">Statistika</p>
+        <ul class="list-unstyled">
+            <li>Adresar : <span class="label label-info">{{ address }}</span></li>
+            <li>Kontaktirano : <span class="label label-warning">{{ (addressC / address * 100) | round(2, 'floor') }} %</span></li>
+            <hr/>
+            <li>Korisnici : <span class="label label-success">{{ clients }}</span></li>
+        </ul>
+    </div>
+    <div class="well well-small todo_list">
+        <p style="text-align: center;">Potsetnik</p>
+            <div class="col-md-9 col-sm-9 col-lg-9 col-xs-9" style="padding: 0;">
+                <input class="form-control todos" type="text" name="new_post" placeholder="Novi potsetnik..." />
+            </div>
+            <div class="col-md-3 col-sm-3 col-lg-3 col-xs-3" style="padding-left: 5px;">
+                <button class="btn btn-warning add_todo"><i class="icon-plus-sign"></i></button>
+            </div>
+        <div class="clearfix"></div>
+        <hr>
+        <ol class="todos_list">
+            {% for t in todos %}
+                <li data-id="{{ t.id }}">{{ t.name }}</li>
+            {% endfor %}
+        </ol>
+        <br/>
+
+    </div>
+</div>

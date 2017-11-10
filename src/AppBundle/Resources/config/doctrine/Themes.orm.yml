@@ -1,0 +1,28 @@
+AppBundle\Entity\Themes:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\ThemesRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        previewlink:
+            type: string
+            length: 255
+        name:
+            type: string
+            length: 255
+        description:
+            type: string
+            length: 255
+        createdAt:
+            type: datetime
+            column: created_at
+        previewImg:
+            type: string
+            length: 255
+            column: preview_img
+    lifecycleCallbacks: {  }

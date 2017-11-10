@@ -1,0 +1,47 @@
+{% extends 'adminbase.html.twig' %}
+
+{% block body %}
+    <h1>Prikaz teme: <span class="label label-info">{{ theme.name }}</span></h1>
+    <br/>
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ theme.id }}</td>
+            </tr>
+            <tr>
+                <th>Link za pregled</th>
+                <td>{{ theme.previewlink }}</td>
+            </tr>
+            <tr>
+                <th>Naziv</th>
+                <td>{{ theme.name }}</td>
+            </tr>
+            <tr>
+                <th>Opis</th>
+                <td>{{ theme.description }}</td>
+            </tr>
+            <tr>
+                <th>Dodato</th>
+                <td>{% if theme.createdAt %}{{ theme.createdAt|date('d-m-Y H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>ScreenShoot</th>
+                <td>
+                    <img src="{{ asset('bundles/app/upload/themes/') }}{{ theme.previewImg }}" height="60" width="60" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a class="btn btn-info" href="{{ path('admin_teme_index') }}">Povratak na listu</a>
+                </td>
+                <td>
+                    {{ form_start(delete_form) }}
+                    <input class="btn btn-danger pull-left" style="margin-right: 10px;" type="submit" value="Obrisi">
+                    {{ form_end(delete_form) }}
+                    <a class="btn btn-warning pull-left" href="{{ path('admin_teme_edit', { 'id': theme.id }) }}">Izmeni</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,37 @@
+AppBundle\Entity\Address:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\AddressRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 145
+        email:
+            type: string
+            length: 65
+        phone:
+            type: string
+            length: 20
+        city:
+            type: string
+            length: 255
+        note:
+            type: string
+            length: '455'
+        createdAt:
+            type: datetime
+            column: created_at
+        addedBy:
+            type: string
+            length: '20'
+            column: added_by
+        called:
+            type: boolean
+
+    lifecycleCallbacks: {  }

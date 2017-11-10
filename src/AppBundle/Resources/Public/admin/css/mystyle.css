@@ -1,0 +1,114 @@
+.navbar-header {
+    padding:0 0 5px 0;
+    margin: 0;
+}
+.navbar-brand img {
+    padding: 0 20px;
+    margin: 0;
+}
+
+.content-main {
+    padding-top: 15px;
+}
+
+.inner {
+    min-height:1200px;
+}
+
+.dataTables_filter label {
+    /*display: block !important;*/
+    float: right !important;
+}
+
+.form-control {
+    margin-bottom: 5px;
+}
+
+.semi-control:nth-of-type(odd) {
+    margin-right: 1%;
+}
+
+.semi-control {
+    width: 49%;
+    float: left;
+}
+
+.nav-msg {
+    margin-top: 5px;
+    padding: 5px;
+    border: 1px solid #f1f1f1;
+    border-radius: 8px;
+    width: 100%;
+}
+
+.one-post {
+    width: 100%;
+    background: #fff;
+    position: relative;
+    padding: 5px 5px 10px 5px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    border: 1px solid #f1f1f1;
+}
+.one-post h3 {
+    font-size: 14px;
+    font-weight: 800;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 2px;
+    left: 5px;
+}
+.one-post span {
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+}
+
+.one-post .post-del {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    font-size: 13px;
+    color: #cccccc;
+}
+
+.one-post .post-del:hover {
+    cursor: pointer;
+    color: #333;
+}
+
+.todo_list {
+    padding: 10px 5px;
+}
+
+.todo_list hr {
+    margin: 5px 0;
+}
+
+.todo_list ol {
+    margin: 10px 0;
+    padding: 0 15px;
+}
+.todo_list ol li:hover {
+    color: #cccccc;
+    cursor: pointer;
+}
+
+.doo {
+    text-decoration: line-through;
+}
+
+.post-head {
+    padding: 5px;
+    margin: 10px 30px 15px 30px;
+}
+
+.panel-default {
+    margin-top: 15px;
+}
+
+.leftside {
+    margin-top: 10px;
+    padding-left: 5px;
+}

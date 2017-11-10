@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Simple Web Team | Dashboard </title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <!--[if IE]>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <![endif]-->
+    <!-- GLOBAL STYLES -->
+    <link rel="stylesheet" href="{{ asset('bundles/app/admin/plugins/bootstrap/css/bootstrap.css') }}" />
+    <link rel="stylesheet" href="{{ asset('bundles/app/admin/css/main.css') }}" />
+    <link rel="stylesheet" href="{{ asset('bundles/app/admin/css/theme.css') }}" />
+    <link rel="stylesheet" href="{{ asset('bundles/app/admin/css/MoneAdmin.css') }}" />
+    <link rel="stylesheet" href="{{ asset('bundles/app/admin/plugins/Font-Awesome/css/font-awesome.css') }}" />
+    <!--END GLOBAL STYLES -->
+
+    <!-- PAGE LEVEL STYLES -->
+    <link href="{{ asset('bundles/app/admin/css/layout2.css') }}" rel="stylesheet" />
+
+    <link rel="stylesheet" href="{{ asset('bundles/app/admin/css/mystyle.css') }}" />
+</head>
+<body class="padTop53 " >
+
+<!-- MAIN WRAPPER -->
+<div id="wrap">
+    <!-- HEADER SECTION -->
+    {{ render(controller(
+    'AppBundle:Parts:navSide'
+    )) }}
+    <!-- END HEADER SECTION -->
+
+    <!-- LEFT MENU SECTION -->
+    {{ render(controller(
+    'AppBundle:Parts:leftSide'
+    )) }}
+    <!--END LEFT MENU SECTION -->
+
+    {# BODY #}
+    <!--PAGE CONTENT -->
+    <div id="content" class="content-main">
+        <div class="inner">
+            {% block body %}
+
+            {% endblock %}
+        </div>
+    </div>
+    <!--END PAGE CONTENT -->
+
+    <!-- RIGHT STRIP  SECTION -->
+    {{ render(controller(
+    'AppBundle:Parts:rightSide'
+    )) }}
+    <!-- END RIGHT STRIP  SECTION -->
+
+</div>
+
+<!--END MAIN WRAPPER -->
+
+<!-- FOOTER -->
+<div id="footer">
+    <p>&copy;  SimpleWeb Team &nbsp;2014 &nbsp;</p>
+</div>
+<!--END FOOTER -->
+<!-- GLOBAL SCRIPTS -->
+<script src="{{ asset('bundles/app/admin/plugins/jquery-2.0.3.min.js') }}"></script>
+<script src="{{ asset('bundles/app/admin/plugins/bootstrap/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('bundles/app/admin/plugins/modernizr-2.6.2-respond-1.1.0.min.js') }}"></script>
+<script src="{{ asset('bundles/app/admin/js/custom.js') }}"></script>
+<!-- END GLOBAL SCRIPTS -->
+
+<!-- TABLE SCRIPTS -->
+<script src="{{ asset('bundles/app/admin/plugins/dataTables/jquery.dataTables.js') }}"></script>
+<script src="{{ asset('bundles/app/admin/plugins/dataTables/dataTables.bootstrap.js') }}"></script>
+<script>
+    $(document).ready(function () {
+        $('#dataTables-example').dataTable();
+    });
+</script>
+<!-- END TABLE SCRIPTS -->
+
+</body>
+<!-- END BODY-->
+
+</html>
